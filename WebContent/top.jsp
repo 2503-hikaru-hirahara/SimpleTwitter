@@ -29,6 +29,27 @@
 					<div class="description"><c:out value="${loginUser.description}" /></div>
 				</div>
 			</c:if>
+			<c:if test="${ not empty errorMessages }">
+				<div class="errorMessages">
+					<ul>
+            			<c:forEach items="${errorMessages}" var="errorMessage">
+            	    		<li><c:out value="${errorMessage}" />
+            			</c:forEach>
+        			</ul>
+    			</div>
+    			<c:remove var="errorMessages" scope="session" />
+			</c:if>
+
+			<div class="form-area">
+    			<c:if test="${ isShowMessageForm }">
+        			<form action="message" method="post">
+            			いま、どうしてる？<br />
+            			<textarea name="text" cols="100" rows="5" class="tweet-box"></textarea>
+            			<br />
+            			<input type="submit" value="つぶやく">（140文字まで）
+        			</form>
+    			</c:if>
+			</div>
             <div class="copyright"> Copyright(c)YourName</div>
         </div>
     </body>
