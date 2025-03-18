@@ -22,6 +22,13 @@
 					<a href="logout">ログアウト</a>
 				</c:if>
 			</div>
+			<c:if test="${ not empty loginUser }">
+    			<div class="profile">
+					<div class="name"><h2><c:out value="${loginUser.name}" /></h2></div>
+					<div class="account">@<c:out value="${loginUser.account}" /></div>
+					<div class="description"><c:out value="${loginUser.description}" /></div>
+				</div>
+			</c:if>
             <div class="copyright"> Copyright(c)YourName</div>
         </div>
     </body>
