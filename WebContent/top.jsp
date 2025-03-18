@@ -12,9 +12,16 @@
     <body>
         <div class="main-contents">
             <div class="header">
-                <a href="login">ログイン</a>
-                <a href="signup">登録する</a>
-            </div>
+				<c:if test="${ empty loginUser }">
+    				<a href="login">ログイン</a>
+        			<a href="signup">登録する</a>
+				</c:if>
+    			<c:if test="${ not empty loginUser }">
+					<a href="./">ホーム</a>
+					<a href="setting">設定</a>
+					<a href="logout">ログアウト</a>
+				</c:if>
+			</div>
             <div class="copyright"> Copyright(c)YourName</div>
         </div>
     </body>

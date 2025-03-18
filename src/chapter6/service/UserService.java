@@ -57,4 +57,33 @@ public class UserService {
             close(connection);
         }
     }
+
+    public User select(String accountOrEmail, String password) {
+
+  	  log.info(new Object(){}.getClass().getEnclosingClass().getName() +
+          " : " + new Object(){}.getClass().getEnclosingMethod().getName());
+
+          Connection connection = null;
+          try {
+              // パスワード暗号化
+              String encPassword = CipherUtil.encrypt(password);
+
+              connection = getConnection();
+              User user = new UserDao().select(connection, accountOrEmail, encPassword);
+              commit(connection);
+
+              return user;
+          } catch (RuntimeException e) {
+              rollback(connection);
+  		log.log(Level.SEVERE, new Object(){}.getClass().getEnclosingClass().getName() + " : " + e.toString(), e);
+              throw e;
+          } catch (Error e) {
+              rollback(connection);
+  		log.log(Level.SEVERE, new Object(){}.getClass().getEnclosingClass().getName() + " : " + e.toString(), e);
+              throw e;
+          } finally {
+              close(connection);
+          }
+    }
+
 }
