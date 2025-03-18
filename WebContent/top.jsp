@@ -50,6 +50,18 @@
         			</form>
     			</c:if>
 			</div>
+			<div class="messages">
+    			<c:forEach items="${messages}" var="message">
+        			<div class="message">
+            			<div class="account-name">
+                			<span class="account"><c:out value="${message.account}" /></span>
+                			<span class="name"><c:out value="${message.name}" /></span>
+            			</div>
+            			<div class="text"><c:out value="${message.text}" /></div>
+            			<div class="date"><fmt:formatDate value="${message.createdDate}" pattern="yyyy/MM/dd HH:mm:ss" /></div>
+        			</div>
+			    </c:forEach>
+			</div>
             <div class="copyright"> Copyright(c)YourName</div>
         </div>
     </body>
