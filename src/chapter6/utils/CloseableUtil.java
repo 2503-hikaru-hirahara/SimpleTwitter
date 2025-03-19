@@ -57,4 +57,5 @@ public class CloseableUtil {
 			throw new SQLRuntimeException(e);
 		}
 	}
+
 }

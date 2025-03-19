@@ -16,7 +16,6 @@ import chapter6.utils.CipherUtil;
 
 public class UserService {
 
-
     /**
     * ロガーインスタンスの生成
     */
@@ -33,7 +32,6 @@ public class UserService {
     }
 
     public void insert(User user) {
-
 
 	  log.info(new Object(){}.getClass().getEnclosingClass().getName() +
         " : " + new Object(){}.getClass().getEnclosingMethod().getName());
@@ -87,8 +85,8 @@ public class UserService {
               close(connection);
           }
     }
-    public User select(int userId) {
 
+    public User select(int userId) {
 
         log.info(new Object(){}.getClass().getEnclosingClass().getName() + 
         " : " + new Object(){}.getClass().getEnclosingMethod().getName());
@@ -112,6 +110,7 @@ public class UserService {
             close(connection);
         }
     }
+
     public void update(User user) {
 
         log.info(new Object(){}.getClass().getEnclosingClass().getName() + 

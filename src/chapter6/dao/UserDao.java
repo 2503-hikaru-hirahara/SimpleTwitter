@@ -20,7 +20,6 @@ import chapter6.logging.InitApplication;
 
 public class UserDao {
 
-
     /**
     * ロガーインスタンスの生成
     */
@@ -81,7 +80,6 @@ public class UserDao {
 
     public User select(Connection connection, String accountOrEmail, String password) {
 
-
   	  log.info(new Object(){}.getClass().getEnclosingClass().getName() +
           " : " + new Object(){}.getClass().getEnclosingMethod().getName());
 
@@ -140,8 +138,8 @@ public class UserDao {
               close(rs);
           }
       }
-      public User select(Connection connection, int id) {
 
+      public User select(Connection connection, int id) {
 
     	    log.info(new Object(){}.getClass().getEnclosingClass().getName() +
     	    " : " + new Object(){}.getClass().getEnclosingMethod().getName());

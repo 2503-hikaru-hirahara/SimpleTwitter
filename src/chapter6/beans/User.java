@@ -62,4 +62,5 @@ public class User implements Serializable {
     public void setUpdatedDate(Date updatedDate) {
     	this.updatedDate = updatedDate;
     }
+
 }

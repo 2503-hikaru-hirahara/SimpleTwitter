@@ -14,6 +14,7 @@ import chapter6.logging.InitApplication;
 
 @WebServlet(urlPatterns = { "/logout" })
 public class LogoutServlet extends HttpServlet {
+
     /**
     * ロガーインスタンスの生成
     */
@@ -44,4 +45,5 @@ public class LogoutServlet extends HttpServlet {
         session.invalidate();
         response.sendRedirect("./");
     }
+
 }

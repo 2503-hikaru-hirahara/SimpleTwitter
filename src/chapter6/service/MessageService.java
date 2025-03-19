@@ -16,7 +16,6 @@ import chapter6.logging.InitApplication;
 
 public class MessageService {
 
-
     /**
     * ロガーインスタンスの生成
     */
@@ -54,6 +53,7 @@ public class MessageService {
             close(connection);
         }
     }
+
     public List<UserMessage> select() {
 
   	  log.info(new Object(){}.getClass().getEnclosingClass().getName() +
@@ -80,4 +80,5 @@ public class MessageService {
               close(connection);
           }
     }
+
 }

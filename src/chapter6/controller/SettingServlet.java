@@ -22,7 +22,6 @@ import chapter6.service.UserService;
 @WebServlet(urlPatterns = { "/setting" })
 public class SettingServlet extends HttpServlet {
 
-
 	/**
 	* ロガーインスタンスの生成
 	*/
@@ -87,7 +86,6 @@ public class SettingServlet extends HttpServlet {
 
     private User getUser(HttpServletRequest request) throws IOException, ServletException {
 
-
 	  log.info(new Object(){}.getClass().getEnclosingClass().getName() +
         " : " + new Object(){}.getClass().getEnclosingMethod().getName());
 
@@ -103,7 +101,6 @@ public class SettingServlet extends HttpServlet {
 
     private boolean isValid(User user, List<String> errorMessages) {
 
-
 	  log.info(new Object(){}.getClass().getEnclosingClass().getName() +
         " : " + new Object(){}.getClass().getEnclosingMethod().getName());
 
@@ -114,11 +111,13 @@ public class SettingServlet extends HttpServlet {
         if (!StringUtils.isEmpty(name) && (20 < name.length())) {
             errorMessages.add("名前は20文字以下で入力してください");
         }
+
         if (StringUtils.isEmpty(account)) {
             errorMessages.add("アカウント名を入力してください");
         } else if (20 < account.length()) {
             errorMessages.add("アカウント名は20文字以下で入力してください");
         }
+
         if (!StringUtils.isEmpty(email) && (50 < email.length())) {
             errorMessages.add("メールアドレスは50文字以下で入力してください");
         }
@@ -128,4 +127,5 @@ public class SettingServlet extends HttpServlet {
         }
         return true;
     }
+
 }

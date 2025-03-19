@@ -22,7 +22,6 @@ import chapter6.service.MessageService;
 @WebServlet(urlPatterns = { "/message" })
 public class MessageServlet extends HttpServlet {
 
-
     /**
     * ロガーインスタンスの生成
     */
@@ -37,7 +36,6 @@ public class MessageServlet extends HttpServlet {
         application.init();
 
     }
-
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -82,4 +80,5 @@ public class MessageServlet extends HttpServlet {
         }
         return true;
     }
+
 }

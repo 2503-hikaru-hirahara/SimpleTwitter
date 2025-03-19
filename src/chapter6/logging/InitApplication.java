@@ -7,7 +7,6 @@ import java.util.logging.Handler;
 import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
-
 public class InitApplication {
 
     /**
@@ -19,7 +18,6 @@ public class InitApplication {
      * java.util.log.LogManagerに読み込ませるログプロパティファイル
      */
     public static final String LOG_PROPERTIES_NAME = "logging.properties";
-
 
     /**
      * InitApplicationのインスタンスを返す。
@@ -78,4 +76,5 @@ public class InitApplication {
             }
         }
     }
+
 }

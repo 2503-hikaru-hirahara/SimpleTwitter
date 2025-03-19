@@ -27,7 +27,6 @@ public class LogFormatter extends Formatter  {
                 put( Level.FINEST,  "FINE" );
             } } );
 
-
     @Override
     public String format(LogRecord record) {
 
@@ -56,6 +55,5 @@ public class LogFormatter extends Formatter  {
 
         return sb.toString();
     }
-
 
 }
