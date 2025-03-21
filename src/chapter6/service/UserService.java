@@ -33,7 +33,7 @@ public class UserService {
 
     public void insert(User user) {
 
-	  log.info(new Object(){}.getClass().getEnclosingClass().getName() +
+        log.info(new Object(){}.getClass().getEnclosingClass().getName() +
         " : " + new Object(){}.getClass().getEnclosingMethod().getName());
 
         Connection connection = null;
@@ -47,11 +47,11 @@ public class UserService {
             commit(connection);
         } catch (RuntimeException e) {
             rollback(connection);
-		log.log(Level.SEVERE, new Object(){}.getClass().getEnclosingClass().getName() + " : " + e.toString(), e);
+        log.log(Level.SEVERE, new Object(){}.getClass().getEnclosingClass().getName() + " : " + e.toString(), e);
             throw e;
         } catch (Error e) {
             rollback(connection);
-		log.log(Level.SEVERE, new Object(){}.getClass().getEnclosingClass().getName() + " : " + e.toString(), e);
+        log.log(Level.SEVERE, new Object(){}.getClass().getEnclosingClass().getName() + " : " + e.toString(), e);
             throw e;
         } finally {
             close(connection);
@@ -60,7 +60,7 @@ public class UserService {
 
     public User select(String accountOrEmail, String password) {
 
-  	  log.info(new Object(){}.getClass().getEnclosingClass().getName() +
+        log.info(new Object(){}.getClass().getEnclosingClass().getName() +
           " : " + new Object(){}.getClass().getEnclosingMethod().getName());
 
           Connection connection = null;
@@ -75,11 +75,11 @@ public class UserService {
               return user;
           } catch (RuntimeException e) {
               rollback(connection);
-  		log.log(Level.SEVERE, new Object(){}.getClass().getEnclosingClass().getName() + " : " + e.toString(), e);
+        log.log(Level.SEVERE, new Object(){}.getClass().getEnclosingClass().getName() + " : " + e.toString(), e);
               throw e;
           } catch (Error e) {
               rollback(connection);
-  		log.log(Level.SEVERE, new Object(){}.getClass().getEnclosingClass().getName() + " : " + e.toString(), e);
+        log.log(Level.SEVERE, new Object(){}.getClass().getEnclosingClass().getName() + " : " + e.toString(), e);
               throw e;
           } finally {
               close(connection);
@@ -88,7 +88,7 @@ public class UserService {
 
     public User select(int userId) {
 
-        log.info(new Object(){}.getClass().getEnclosingClass().getName() + 
+        log.info(new Object(){}.getClass().getEnclosingClass().getName() +
         " : " + new Object(){}.getClass().getEnclosingMethod().getName());
 
         Connection connection = null;
@@ -100,11 +100,11 @@ public class UserService {
             return user;
         } catch (RuntimeException e) {
             rollback(connection);
-    	  log.log(Level.SEVERE, new Object(){}.getClass().getEnclosingClass().getName() + " : " + e.toString(), e);
+        log.log(Level.SEVERE, new Object(){}.getClass().getEnclosingClass().getName() + " : " + e.toString(), e);
             throw e;
         } catch (Error e) {
             rollback(connection);
-    	  log.log(Level.SEVERE, new Object(){}.getClass().getEnclosingClass().getName() + " : " + e.toString(), e);
+        log.log(Level.SEVERE, new Object(){}.getClass().getEnclosingClass().getName() + " : " + e.toString(), e);
             throw e;
         } finally {
             close(connection);
@@ -113,27 +113,47 @@ public class UserService {
 
     public void update(User user) {
 
-        log.info(new Object(){}.getClass().getEnclosingClass().getName() + 
+        log.info(new Object(){}.getClass().getEnclosingClass().getName() +
         " : " + new Object(){}.getClass().getEnclosingMethod().getName());
 
         Connection connection = null;
         try {
-        	if(!StringUtils.isBlank(user.getPassword())) {
-        		// パスワード暗号化
-        		String encPassword = CipherUtil.encrypt(user.getPassword());
-        		user.setPassword(encPassword);
-        	}
+            if(!StringUtils.isBlank(user.getPassword())) {
+                // パスワード暗号化
+                String encPassword = CipherUtil.encrypt(user.getPassword());
+                user.setPassword(encPassword);
+            }
 
             connection = getConnection();
             new UserDao().update(connection, user);
             commit(connection);
         } catch (RuntimeException e) {
             rollback(connection);
-    	  log.log(Level.SEVERE, new Object(){}.getClass().getEnclosingClass().getName() + " : " + e.toString(), e);
+        log.log(Level.SEVERE, new Object(){}.getClass().getEnclosingClass().getName() + " : " + e.toString(), e);
             throw e;
         } catch (Error e) {
             rollback(connection);
-    	  log.log(Level.SEVERE, new Object(){}.getClass().getEnclosingClass().getName() + " : " + e.toString(), e);
+        log.log(Level.SEVERE, new Object(){}.getClass().getEnclosingClass().getName() + " : " + e.toString(), e);
+            throw e;
+        } finally {
+            close(connection);
+        }
+    }
+
+    public User select(String account) {
+
+        Connection connection = null;
+        try {
+            connection = getConnection();
+            User user = new UserDao().select(connection, account);
+            commit(connection);
+
+            return user;
+        } catch (RuntimeException e) {
+            rollback(connection);
+            throw e;
+        } catch (Error e) {
+            rollback(connection);
             throw e;
         } finally {
             close(connection);
