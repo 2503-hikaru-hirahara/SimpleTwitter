@@ -47,11 +47,11 @@ public class UserService {
             commit(connection);
         } catch (RuntimeException e) {
             rollback(connection);
-        log.log(Level.SEVERE, new Object(){}.getClass().getEnclosingClass().getName() + " : " + e.toString(), e);
+            log.log(Level.SEVERE, new Object(){}.getClass().getEnclosingClass().getName() + " : " + e.toString(), e);
             throw e;
         } catch (Error e) {
             rollback(connection);
-        log.log(Level.SEVERE, new Object(){}.getClass().getEnclosingClass().getName() + " : " + e.toString(), e);
+            log.log(Level.SEVERE, new Object(){}.getClass().getEnclosingClass().getName() + " : " + e.toString(), e);
             throw e;
         } finally {
             close(connection);
@@ -60,7 +60,7 @@ public class UserService {
 
     public User select(String accountOrEmail, String password) {
 
-        log.info(new Object(){}.getClass().getEnclosingClass().getName() +
+          log.info(new Object(){}.getClass().getEnclosingClass().getName() +
           " : " + new Object(){}.getClass().getEnclosingMethod().getName());
 
           Connection connection = null;
@@ -75,11 +75,11 @@ public class UserService {
               return user;
           } catch (RuntimeException e) {
               rollback(connection);
-        log.log(Level.SEVERE, new Object(){}.getClass().getEnclosingClass().getName() + " : " + e.toString(), e);
+              log.log(Level.SEVERE, new Object(){}.getClass().getEnclosingClass().getName() + " : " + e.toString(), e);
               throw e;
           } catch (Error e) {
               rollback(connection);
-        log.log(Level.SEVERE, new Object(){}.getClass().getEnclosingClass().getName() + " : " + e.toString(), e);
+              log.log(Level.SEVERE, new Object(){}.getClass().getEnclosingClass().getName() + " : " + e.toString(), e);
               throw e;
           } finally {
               close(connection);
@@ -100,11 +100,11 @@ public class UserService {
             return user;
         } catch (RuntimeException e) {
             rollback(connection);
-        log.log(Level.SEVERE, new Object(){}.getClass().getEnclosingClass().getName() + " : " + e.toString(), e);
+            log.log(Level.SEVERE, new Object(){}.getClass().getEnclosingClass().getName() + " : " + e.toString(), e);
             throw e;
         } catch (Error e) {
             rollback(connection);
-        log.log(Level.SEVERE, new Object(){}.getClass().getEnclosingClass().getName() + " : " + e.toString(), e);
+            log.log(Level.SEVERE, new Object(){}.getClass().getEnclosingClass().getName() + " : " + e.toString(), e);
             throw e;
         } finally {
             close(connection);
@@ -129,11 +129,11 @@ public class UserService {
             commit(connection);
         } catch (RuntimeException e) {
             rollback(connection);
-        log.log(Level.SEVERE, new Object(){}.getClass().getEnclosingClass().getName() + " : " + e.toString(), e);
+            log.log(Level.SEVERE, new Object(){}.getClass().getEnclosingClass().getName() + " : " + e.toString(), e);
             throw e;
         } catch (Error e) {
             rollback(connection);
-        log.log(Level.SEVERE, new Object(){}.getClass().getEnclosingClass().getName() + " : " + e.toString(), e);
+            log.log(Level.SEVERE, new Object(){}.getClass().getEnclosingClass().getName() + " : " + e.toString(), e);
             throw e;
         } finally {
             close(connection);
