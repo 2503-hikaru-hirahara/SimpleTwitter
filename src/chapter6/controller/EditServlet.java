@@ -49,18 +49,12 @@ public class EditServlet extends HttpServlet {
 		User loginUser = (User) session.getAttribute("loginUser");
 		List<String> errorMessages = new ArrayList<String>();
 
-
-		int id;
-		try {
-			id = Integer.parseInt(request.getParameter("id"));
-		} catch (NumberFormatException e){
-			errorMessages.add("不正なパラメータが入力されました");
-			session.setAttribute("errorMessages", errorMessages);
-			response.sendRedirect("./");
-			return;
-		}
-
-		Message message = new MessageService().select(id);
+		Message message = null;
+		String id = request.getParameter("id");
+		if(!StringUtils.isEmpty(id) && id.matches("^[0-9]*$")) {
+			int messageId = Integer.parseInt(request.getParameter("id"));
+			message = new MessageService().select(messageId);
+		};
 
 		if(message == null || loginUser.getId() != message.getUserId()) {
 			errorMessages.add("不正なパラメータが入力されました");
