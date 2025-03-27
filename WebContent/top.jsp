@@ -41,7 +41,7 @@
 				<c:remove var="errorMessages" scope="session" />
 			</c:if>
 
-			<div class="form-area">
+			<div class="message-form-area">
 				<c:if test="${ isShowMessageForm }">
 					<form action="message" method="post">
 						いま、どうしてる？<br />
@@ -73,6 +73,31 @@
 							</form>
 						</c:if>
 					</div>
+					<div class="comment-form-area">
+						<c:if test="${ isShowCommentForm }">
+							<form action="comment" method="post">
+								<textarea name="text" cols="100" rows="5" class="tweet-box"></textarea>
+								<br />
+								<input name="message_id" value="${message.id}" id="id" type="hidden"/>
+								<input type="submit" value="返信">（140文字まで）
+							</form>
+						</c:if>
+					</div>
+					<div class="comments">
+						<c:forEach items="${comments}" var="comment">
+							<div class="comment">
+								<c:if test="${comment.messageId == message.id}">
+									<div class="account-name">
+									<span class="account"><c:out value="${comment.account}" /></span>
+									<span class="name"><c:out value="${comment.name}" /></span>
+									</div>
+									<div class="text" style="white-space: pre-wrap;"><c:out value="${comment.text}" /></div>
+									<div class="date"><fmt:formatDate value="${comment.createdDate}" pattern="yyyy/MM/dd HH:mm:ss" /></div>
+								</c:if>
+							</div>
+						</c:forEach>
+					</div>
+					<br />
 				</c:forEach>
 			</div>
 			<div class="copyright"> Copyright(c)YourName</div>

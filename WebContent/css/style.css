@@ -54,12 +54,19 @@ a.profile .account {
 	line-height: 22px;
 }
 
-.form-area {
+.message-form-area {
 	margin-top: 00px;
 	margin-right: 00px;
 	margin-bottom: 00px;
 	margin-left: 00px;
 	background-color: #ECECFF;
+}
+
+.comment-form-area {
+	margin-top: 00px;
+	margin-right: 00px;
+	margin-bottom: 00px;
+	margin-left: 00px;
 }
 
 .message-icon {
@@ -102,10 +109,14 @@ a.profile .account {
 	font: small-caption;
 }
 
-.message .date {
+.message .date,.comment .date {
 	font-weight: lighter;
 	color: gray;
 	font: small-caption;
+}
+
+.message form{
+    display: inline;
 }
 
 .copyright {
