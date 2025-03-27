@@ -25,7 +25,7 @@
 			</div>
 			<c:if test="${ not empty loginUser }">
 				<div class="profile">
-				<div class="name"><h2><c:out value="${loginUser.name}" /></h2></div>
+					<div class="name"><h2><c:out value="${loginUser.name}" /></h2></div>
 					<div class="account">@<c:out value="${loginUser.account}" /></div>
 					<div class="description"><c:out value="${loginUser.description}" /></div>
 				</div>
