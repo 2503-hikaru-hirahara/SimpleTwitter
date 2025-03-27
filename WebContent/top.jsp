@@ -25,7 +25,7 @@
 			</div>
 			<c:if test="${ not empty loginUser }">
 				<div class="profile">
-					<div class="name"><h2><c:out value="${loginUser.name}" /></h2></div>
+				<div class="name"><h2><c:out value="${loginUser.name}" /></h2></div>
 					<div class="account">@<c:out value="${loginUser.account}" /></div>
 					<div class="description"><c:out value="${loginUser.description}" /></div>
 				</div>
@@ -40,7 +40,14 @@
 				</div>
 				<c:remove var="errorMessages" scope="session" />
 			</c:if>
-
+			<form>
+				日付：
+				<input name="start" type="date" id="start" />
+				～
+				<input name="end" type="date" id="end" />
+				<input type="submit" value="絞り込み" />
+			</form>
+			<br />
 			<div class="message-form-area">
 				<c:if test="${ isShowMessageForm }">
 					<form action="message" method="post">
