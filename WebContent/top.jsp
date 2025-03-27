@@ -95,8 +95,8 @@
 							<div class="comment">
 								<c:if test="${comment.messageId == message.id}">
 									<div class="account-name">
-									<span class="account"><c:out value="${comment.account}" /></span>
-									<span class="name"><c:out value="${comment.name}" /></span>
+										<span class="account"><c:out value="${comment.account}" /></span>
+										<span class="name"><c:out value="${comment.name}" /></span>
 									</div>
 									<div class="text" style="white-space: pre-wrap;"><c:out value="${comment.text}" /></div>
 									<div class="date"><fmt:formatDate value="${comment.createdDate}" pattern="yyyy/MM/dd HH:mm:ss" /></div>

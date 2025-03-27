@@ -81,8 +81,8 @@ public class UserCommentDao {
 				comment.setText(rs.getString("text"));
 				comment.setUserId(rs.getInt("user_id"));
 				comment.setMessageId(rs.getInt("message_id"));
-                comment.setAccount(rs.getString("account"));
-                comment.setName(rs.getString("name"));
+				comment.setAccount(rs.getString("account"));
+				comment.setName(rs.getString("name"));
 				comment.setCreatedDate(rs.getTimestamp("created_date"));
 
 				comments.add(comment);
