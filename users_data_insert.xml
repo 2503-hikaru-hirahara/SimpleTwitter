@@ -1,0 +1,45 @@
+<dataset>
+	<users
+		account="test001"
+		name="テスト001"
+		email="test001@com"
+		password="hoge001"
+		description="テスト001"
+	/>
+	<users
+		account="test002"
+		name="テスト002"
+		email="test002@com"
+		password="hoge002"
+		description="テスト002"
+	/>
+	<users
+		account="test003"
+		name="テスト003"
+		email="test003@com"
+		password="hoge003"
+		description="テスト003"
+	/>
+	<users
+		account="test001insert"
+		name="テスト001insert"
+		email="test001@insert.com"
+		password="hoge001insert"
+		description="テスト001insert"
+	/>
+	<users
+		account="test002insert"
+		name="テスト002insert"
+		email="test002@insert.com"
+		password="hoge002insert"
+		description="テスト002insert"
+	/>
+	<users
+		account="test003insert"
+		name="テスト003insert"
+		email="test003@insert.com"
+		password="hoge003insert"
+		description="テスト003insert"
+	/>
+</dataset>
+

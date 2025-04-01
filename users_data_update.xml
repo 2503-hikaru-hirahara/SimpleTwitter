@@ -1,0 +1,24 @@
+<dataset>
+	<users
+		account="test001update"
+		name="テスト001update"
+		email="test001@update.com"
+		password="hoge001update"
+		description="テスト001update"
+	/>
+	<users
+		account="test002update"
+		name="テスト002update"
+		email="test002@update.com"
+		password="hoge002"
+		description="テスト002update"
+	/>
+	<users
+		account="test003update"
+		name="テスト003update"
+		email="test003@update.com"
+		password="hoge003update"
+		description="テスト003update"
+	/>
+</dataset>
+

@@ -1,0 +1,30 @@
+<dataset>
+	<messages
+		user_id="1"
+		text="テストデータ001"
+	/>
+	<messages
+		user_id="2"
+		text="テストデータ002"
+	/>
+	<messages
+		user_id="3"
+		text="テストデータ003"
+	/>
+	<users
+		account="test001"
+		name="test001"
+		password="hoge"
+	/>
+	<users
+		account="test002"
+		name="test002"
+		password="hoge"
+	/>
+	<users
+		account="test003"
+		name="test003"
+		password="hoge"
+	/>
+</dataset>
+

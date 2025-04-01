@@ -1,0 +1,27 @@
+<dataset>
+	<messages
+		user_id="1"
+		text="テストデータ001"
+	/>
+	<messages
+		user_id="2"
+		text="テストデータ002"
+	/>
+	<messages
+		user_id="3"
+		text="テストデータ003"
+	/>
+	<messages
+		user_id="1"
+		text="テストデータ004"
+	/>
+	<messages
+		user_id="2"
+		text="テストデータ005"
+	/>
+	<messages
+		user_id="3"
+		text="テストデータ006"
+	/>
+</dataset>
+
